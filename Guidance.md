@@ -27,10 +27,10 @@ Adjust the Interrupt Device Policy in GoInterruptPolicy or [Microsoft Interrupt 
 
 - On Realtek NICs set the policy to "IrqPolicySpecifiedProcessors", then set an affinity that aligns with the settings configured in the registry
 
-    > [!IMPORTANT]
-    > RSS doesn't properly function when using more than 1 RSS queue on some systems with Realtek NICs. It's unclear why and on which systems this happens.
-    >
-    > Experiment with disabling SMT/Hyper-Threading as this resolved the issue for some people.
+> [!IMPORTANT]
+> RSS doesn't properly function when using more than 1 RSS queue on some systems with Realtek NICs. It's unclear why and on which systems this happens.
+>
+> Experiment with disabling SMT/Hyper-Threading as this resolved the issue for some people.
 
 <br>
 
