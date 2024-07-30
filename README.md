@@ -12,8 +12,6 @@
 
 ### [Research](Research.md)
 
-- [Which NICs/drivers support Receive Side Scaling (RSS)?](Research.md#which-nicsdrivers-support-receive-side-scaling-rss)
-
 # Network
 
 ## Receive Side Scaling (RSS) Configuration
