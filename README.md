@@ -10,7 +10,7 @@
 - [Network](#network)
     - [Receive Side Scaling (RSS) Configuration](#receive-side-scaling-rss-configuration)
 
-### [Research](Research.md)
+### [<ins>Research</ins>](Research.md)
 
 # Network
 
