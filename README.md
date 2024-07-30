@@ -4,9 +4,7 @@
 
 ### [1. Guidance](Guidance.md)
 
-### 2. Resources - work in progress
-
-### [3. Research](Research.md)
+### [2. Research](Research.md)
 
 ## Guide
 
