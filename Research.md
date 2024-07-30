@@ -23,7 +23,7 @@ If you're planning to use RSS, consider avoiding motherboards with Realtek NICs 
 
 <br>
 
-To install an NDIS driver for an Intel NIC on a Windows 11 system, extract the installer .exe file via 7-Zip, then install the driver from the corresponding NDIS68 folder through Device manager.
+To install an NDIS driver for an Intel NIC on a Windows 11 system, extract the installer .exe file via 7-Zip, then install the driver from the corresponding NDIS68 folder through Device Manager.
 
 Verify that you installed the correct driver by running an xperf trace while an internet speedtest is running:
 
