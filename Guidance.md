@@ -1,6 +1,6 @@
 # Optimization Guidance
 
-## Receive side scaling (RSS) Configuration
+## Receive Side Scaling (RSS) Configuration
 
 Keep in mind that MSI-X is required for RSS to function properly [as it allows the ISR to run on the same CPU that executes the DPC](https://learn.microsoft.com/en-us/windows-hardware/drivers/network/introduction-to-receive-side-scaling#how-rss-improves-system-performance).
 
