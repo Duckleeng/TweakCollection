@@ -1,10 +1,10 @@
 # Optimization Guidance
 
-## RSS Configuration
+## Receive side scaling (RSS) Configuration
 
 Keep in mind that MSI-X is required for RSS to function properly [as it allows the ISR to run on the same CPU that executes the DPC](https://learn.microsoft.com/en-us/windows-hardware/drivers/network/introduction-to-receive-side-scaling#how-rss-improves-system-performance).
 
-Firstly, ensure that a driver with proper RSS support is installed - [Which drivers/NICs support RSS?](Research.md#which-driversdevices-support-rss)
+Firstly, ensure that a driver with proper RSS support is installed - [Which drivers/NICs support RSS?](Research.md#which-nicsdrivers-support-receive-side-scaling-rss)
 
 Navigate to the following registry key to configure RSS via the registry:
 
