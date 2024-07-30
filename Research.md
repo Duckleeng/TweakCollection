@@ -1,5 +1,9 @@
 # Research
 
+## Table of Contents
+
+- [Which NICs/drivers support Receive Side Scaling (RSS)?](#which-nicsdrivers-support-receive-side-scaling-rss)
+
 ## Which NICs/drivers support Receive Side Scaling (RSS)?
 
 There are two main network driver interfaces: NDIS ("Windows 10 drivers") and NetAdapterCx ("Windows 11 drivers").
