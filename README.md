@@ -21,7 +21,7 @@ Enabling MMCSS scheduling of DWM and CSRSS threads will boost the priorities of 
 
 To do this download [DWMEnableMMCSS](https://github.com/Duckleeng/DWMEnableMMCSS), then execute the following command from a shortcut in the `shell:startup` folder:
 
-```batch
+```cmd
 C:\DWMEnableMMCSS.exe --no-console
 ```
 
