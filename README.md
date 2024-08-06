@@ -7,7 +7,7 @@
 
 ### [Guidance](#table-of-contents)
 
-- [Enable MMCSS scheduling of DWM and CSRSS threads](#enable-mmcss-scheduling-of-dwm-and-csrss-threads)
+- [Enable MMCSS Scheduling of DWM and CSRSS Threads](#enable-mmcss-scheduling-of-dwm-and-csrss-threads)
 - [Network](#network)
     - [Receive Side Scaling (RSS) Configuration](#receive-side-scaling-rss-configuration)
 
