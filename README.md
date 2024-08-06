@@ -7,10 +7,25 @@
 
 ### [Guidance](#table-of-contents)
 
+- [Enable MMCSS scheduling of DWM and CSRSS threads](#enable-mmcss-scheduling-of-dwm-and-csrss-threads)
 - [Network](#network)
     - [Receive Side Scaling (RSS) Configuration](#receive-side-scaling-rss-configuration)
 
 ### [<ins>Research</ins>](Research.md)
+
+---
+
+# Enable MMCSS Scheduling of DWM and CSRSS Threads
+
+Enabling MMCSS scheduling of DWM and CSRSS threads will boost the priorities of the input (and other) threads, resulting in decreased input handling latency.
+
+To do this download [DWMEnableMMCSS](https://github.com/Duckleeng/DWMEnableMMCSS), then execute the following command from a shortcut in the `shell:startup` folder:
+
+```batch
+C:\DWMEnableMMCSS.exe --no-console
+```
+
+---
 
 # Network
 
