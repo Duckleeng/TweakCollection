@@ -25,8 +25,6 @@ To do this download [DWMEnableMMCSS](https://github.com/Duckleeng/DWMEnableMMCSS
 C:\DWMEnableMMCSS.exe --no-console
 ```
 
----
-
 # Network
 
 ## Receive Side Scaling (RSS) Configuration
