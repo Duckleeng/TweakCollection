@@ -67,7 +67,7 @@ After adjusting the mentioned settings verify that ISRs/DPCs are executed on the
 ## Disable Delayed TCP Acknowledgments
 
 > [!NOTE]
-> This section is related only to TCP traffic, and as most applications use UDP for latency-sensitive traffic, there are no gains from following it in most cases.
+> This section is related to TCP traffic only. Since most applications use UDP for latency-sensitive traffic, there are no gains from following it in most cases.
 >
 > Only follow this section if you're dealing with latency-sensitive TCP traffic.
 
