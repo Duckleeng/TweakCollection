@@ -10,6 +10,7 @@
 - [Enable MMCSS Scheduling of DWM and CSRSS Threads](#enable-mmcss-scheduling-of-dwm-and-csrss-threads)
 - [Network](#network)
     - [Receive Side Scaling (RSS) Configuration](#receive-side-scaling-rss-configuration)
+    - [Disable Delayed TCP Acknowledgments](#disable-delayed-tcp-acknowledgments)
 
 ### [<ins>Research</ins>](Research.md)
 
@@ -62,3 +63,18 @@ Adjust the Interrupt Device Policy in GoInterruptPolicy or [Microsoft Interrupt 
 After adjusting the mentioned settings verify that ISRs/DPCs are executed on the desired cores with an xperf trace
 
 - Avoid using the `Get-NetAdapterRss` Powershell command for this verification as it's output can be missleading
+
+## Disable Delayed TCP Acknowledgments
+
+> [!NOTE]
+> This section is related only to TCP traffic, and as most applications use UDP for latency-sensitive traffic, there are no gains from following it in most cases.
+>
+> Only follow this section if you're dealing with latency-sensitive TCP traffic.
+
+By default, [Windows delays sending TCP acknowledgments until a second segment is received or 200 milliseconds pass](https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/registry-entry-control-tcp-acknowledgment-behavior). This can cause unwanted latencies in communication with the server.
+
+Delayed TCP Acknowledgments can be disabled for all present interfaces with the following command:
+
+```cmd
+for /f "usebackq delims=" %a in (`reg query HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces`) do (reg add %a /v "TcpAckFrequency" /t REG_DWORD /d "1" /f)
+```
