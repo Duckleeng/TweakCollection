@@ -8,6 +8,7 @@
 ### [Guidance](#table-of-contents)
 
 - [Enable MMCSS Scheduling of DWM and CSRSS Threads](#enable-mmcss-scheduling-of-dwm-and-csrss-threads)
+- [Disable Timer Serialization](#disable-timer-serialization)
 - [Network](#network)
     - [Receive Side Scaling (RSS) Configuration](#receive-side-scaling-rss-configuration)
     - [Disable Delayed TCP Acknowledgments](#disable-delayed-tcp-acknowledgments)
@@ -24,6 +25,18 @@ To do this download [DWMEnableMMCSS](https://github.com/Duckleeng/DWMEnableMMCSS
 
 ```cmd
 C:\DWMEnableMMCSS.exe --no-console
+```
+
+# Disable Timer Serialization
+
+When timer serialization is enabled, the kernel always chooses CPU 0 as the timer expiration processing core. This behavior can lead to congestion and delays in DPC execution. Disabling timer serialization helps resolve this issue by distributing timer-expiration load among unparked logical processors.
+
+On client systems that support Modern Standby, timer serialization is enabled by default, as distributing timers across cores makes Modern Standby difficult to implement. Timer serialization is disabled by default on systems without Modern Standby support.
+
+Timer serialization can be forcefully disabled with the following command:
+
+```cmd
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\kernel" /v "SerializeTimerExpiration" /t REG_DWORD /d "2" /f
 ```
 
 # Network
