@@ -31,7 +31,7 @@ C:\DWMEnableMMCSS.exe --no-console
 
 When timer serialization is enabled, the kernel always chooses CPU 0 as the timer expiration processing core. This behavior can lead to congestion and delays in DPC execution. Disabling timer serialization helps resolve this issue by distributing timer-expiration load among unparked logical processors.
 
-On client systems that support Modern Standby, timer serialization is enabled by default, as distributing timers across cores makes Modern Standby difficult to implement. Timer serialization is disabled by default on systems without Modern Standby support.
+On client systems that support [Modern Standby](https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/modern-standby), timer serialization is enabled by default, as distributing timers across cores makes Modern Standby difficult to implement. Timer serialization is disabled by default on systems without Modern Standby support.
 
 Timer serialization can be forcefully disabled with the following command:
 
