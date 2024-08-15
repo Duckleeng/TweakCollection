@@ -28,7 +28,7 @@ Verify that you installed the correct driver by running an xperf trace while an 
 
 In the [patch notes](https://downloadmirror.intel.com/785800/readme_28.2.txt) of the 28.2 Intel Network Adapter Driver, RSS is noted as a removed feature
 
-- Despite this, RSS still continues to function when configured following the [instructions in Guidance](Guidance.md#receive-side-scaling-rss-configuration)
+- Despite this, RSS still continues to function when configured following the [instructions in Guidance](README.md#receive-side-scaling-rss-configuration)
 
 ### Realtek
 
