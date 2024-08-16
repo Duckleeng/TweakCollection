@@ -5,8 +5,9 @@
 
 ## Table of Contents
 
-### [Guidance](#table-of-contents)
+### [Guidance](#guidance)
 
+- [Power Plan](#power-plan)
 - [Enable MMCSS Scheduling of DWM and CSRSS Threads](#enable-mmcss-scheduling-of-dwm-and-csrss-threads)
 - [Disable Timer Serialization](#disable-timer-serialization)
 - [Network](#network)
@@ -16,6 +17,12 @@
 ### [<ins>Research</ins>](Research.md)
 
 ---
+
+# Power Plan
+
+Use the [generate-power-plan.bat](scripts/generate-power-plan.bat) script to generate an optimized power plan. Read through the script and modify it according to your needs before running it.
+
+- See also: [CPU Idle States - PC-Tuning](https://github.com/valleyofdoom/PC-Tuning#1146-cpu-idle-states)
 
 # Enable MMCSS Scheduling of DWM and CSRSS Threads
 
