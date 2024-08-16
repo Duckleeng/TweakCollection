@@ -4,7 +4,7 @@
 for /f "usebackq tokens=4" %%a in (`powercfg /duplicatescheme 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c`) do (set "GUID=%%a")
 
 ::give the new power plan a nice name
-powercfg /changename %GUID% "Ultra Performance" "Made by Duckling"
+powercfg /changename %GUID% "Ultra Performance"
 
 ::Turn off hard disk after - 0
 powercfg /setacvalueindex %GUID% SUB_DISK DISKIDLE 0
