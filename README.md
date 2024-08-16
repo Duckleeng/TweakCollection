@@ -28,7 +28,7 @@ Use the [generate-power-plan.bat](scripts/generate-power-plan.bat) script to gen
 
 Enabling MMCSS scheduling of DWM and CSRSS threads will boost the priorities of the input (and other) threads, resulting in decreased input handling latency.
 
-To do this download [DWMEnableMMCSS](https://github.com/Duckleeng/DWMEnableMMCSS), then add the following command to a shortcut in the `shell:startup` folder:
+To do this, download [DWMEnableMMCSS](https://github.com/Duckleeng/DWMEnableMMCSS), then add the following command to a shortcut in the `shell:startup` folder:
 
 ```cmd
 C:\DWMEnableMMCSS.exe --no-console
