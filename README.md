@@ -67,7 +67,7 @@ Navigate to the following registry key to configure RSS via the registry:
 
 <br>
 
-Ensure that the "Limit" setting in [MSI Utility v3](https://forums.guru3d.com/threads/windows-line-based-vs-message-signaled-based-interrupts-msi-tool.378044/) ("MSI Limit" in [GoInterruptPolicy](https://github.com/spddl/GoInterruptPolicy)) for your NIC is set to the number of your desired RSS queues or higher
+Ensure that the "Limit" setting in [MSI Utility v3](https://forums.guru3d.com/threads/windows-line-based-vs-message-signaled-based-interrupts-msi-tool.378044/) ("MSI Limit" in [GoInterruptPolicy](https://github.com/spddl/GoInterruptPolicy)) for your NIC is set to the number of your desired RSS queues or higher.
 
 Adjust the Interrupt Device Policy in GoInterruptPolicy or [Microsoft Interrupt Affinity Tool](https://www.techpowerup.com/download/microsoft-interrupt-affinity-tool/):
 
@@ -80,7 +80,7 @@ Adjust the Interrupt Device Policy in GoInterruptPolicy or [Microsoft Interrupt 
 >
 > Experiment with disabling SMT/Hyper-Threading as this resolved the issue for some people.
 
-After adjusting the mentioned settings verify that ISRs/DPCs are executed on the desired cores with an xperf trace
+After adjusting the mentioned settings verify that ISRs/DPCs are executed on the desired cores with an xperf trace.
 
 - Avoid using the `Get-NetAdapterRss` Powershell command for this verification as it's output can be missleading
 
