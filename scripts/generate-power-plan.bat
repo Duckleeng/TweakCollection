@@ -47,33 +47,5 @@ powercfg /setacvalueindex %GUID% SUB_PROCESSOR CPMINCORES 100
 powercfg /setacvalueindex %GUID% SUB_PROCESSOR CPMINCORES1 100
 
 
-::P-STATE SECTION
-::This section impacts P-state behavior only when hardware-controlled P-states aren't available
-
-::Processor performance increase threshold - 10
-powercfg /setacvalueindex %GUID% SUB_PROCESSOR PERFINCTHRESHOLD 10
-
-::Processor performance increase threshold for Processor Power Efficiency Class 1 - 10
-powercfg /setacvalueindex %GUID% SUB_PROCESSOR PERFINCTHRESHOLD1 10
-
-::Processor performance decrease threshold - 0
-powercfg /setacvalueindex %GUID% SUB_PROCESSOR PERFDECTHRESHOLD 0
-
-::Processor performance decrease threshold for Processor Power Efficiency Class 1 - 0
-powercfg /setacvalueindex %GUID% SUB_PROCESSOR PERFDECTHRESHOLD1 0
-
-::Processor performance decrease policy - Single
-powercfg /setacvalueindex %GUID% SUB_PROCESSOR PERFDECPOL 1
-
-::Processor performance decrease policy for Processor Power Efficiency Class 1 - Single
-powercfg /setacvalueindex %GUID% SUB_PROCESSOR PERFDECPOL1 1
-
-::Processor performance increase policy - Rocket
-powercfg /setacvalueindex %GUID% SUB_PROCESSOR PERFINCPOL 2
-
-::Processor performance increase policy for Processor Power Efficiency Class 1 - Rocket
-powercfg /setacvalueindex %GUID% SUB_PROCESSOR PERFINCPOL1 2
-
-
 choice /c yn /m "Set power plan as active?"
 if %errorlevel% EQU 1 (powercfg /s %GUID%)
