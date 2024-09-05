@@ -18,9 +18,6 @@ powercfg /setacvalueindex %GUID% SUB_PROCESSOR THROTTLING 0
 ::Processor idle demote threshold - 100
 powercfg /setacvalueindex %GUID% SUB_PROCESSOR IDLEDEMOTE 100
 
-::Processor performance time check interval - 5000
-powercfg /setacvalueindex %GUID% SUB_PROCESSOR PERFCHECK 5000
-
 ::Processor idle promote threshold - 100
 powercfg /setacvalueindex %GUID% SUB_PROCESSOR IDLEPROMOTE 100
 
@@ -30,6 +27,10 @@ powercfg /setacvalueindex %GUID% SUB_VIDEO VIDEOIDLE 0
 ::Allow Standby States - Off
 ::Disables sleep functionality, no other benefits
 powercfg /setacvalueindex %GUID% SUB_SLEEP ALLOWSTANDBY 0
+
+::Processor performance time check interval - 5000
+::Remove this setting if you use dynamic core frequency technologies (such as Intel Turbo Boost 3.0 or Ryzen PBO)
+powercfg /setacvalueindex %GUID% SUB_PROCESSOR PERFCHECK 5000
 
 
 ::DISABLE CORE PARKING SECTION
