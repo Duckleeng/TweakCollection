@@ -6,20 +6,11 @@ for /f "usebackq tokens=4" %%a in (`powercfg /duplicatescheme 8c5e7fda-e8bf-4a96
 ::give the new power plan a nice name
 powercfg /changename %GUID% "Ultra Performance" "Made by Duckling"
 
-::Turn off hard disk after - 0
-powercfg /setacvalueindex %GUID% SUB_DISK DISKIDLE 0
-
-::Allow Standby States - Off
-powercfg /setacvalueindex %GUID% SUB_SLEEP ALLOWSTANDBY 0
-
 ::USB selective suspend setting - Disabled
 powercfg /setacvalueindex %GUID% 2a737441-1930-4402-8d77-b2bebba308a3 48e6b7a6-50f5-4782-a5d4-53bb8f07e226 0
 
 ::USB 3 Link Power Mangement - Off
 powercfg /setacvalueindex %GUID% 2a737441-1930-4402-8d77-b2bebba308a3 d4e98f31-5ffe-4ce1-be31-1b38b384c009 0
-
-::Deep Sleep Enabled/Disabled - Deep Sleep Disabled
-powercfg /setacvalueindex %GUID% SUB_IR DEEPSLEEP 0
 
 ::Allow Throttle States - Off
 powercfg /setacvalueindex %GUID% SUB_PROCESSOR THROTTLING 0
@@ -35,6 +26,10 @@ powercfg /setacvalueindex %GUID% SUB_PROCESSOR IDLEPROMOTE 100
 
 ::Turn off display after - 0
 powercfg /setacvalueindex %GUID% SUB_VIDEO VIDEOIDLE 0
+
+::Allow Standby States - Off
+::Disables sleep functionality, no other benefits
+powercfg /setacvalueindex %GUID% SUB_SLEEP ALLOWSTANDBY 0
 
 
 ::DISABLE CORE PARKING SECTION
