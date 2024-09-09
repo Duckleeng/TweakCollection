@@ -29,12 +29,12 @@ powercfg /setacvalueindex %GUID% SUB_VIDEO VIDEOIDLE 0
 powercfg /setacvalueindex %GUID% SUB_SLEEP ALLOWSTANDBY 0
 
 ::Processor performance time check interval - 5000
-::Remove this setting if you use dynamic core frequency technologies (such as Intel Turbo Boost 3.0 or Ryzen PBO)
+::Remove this setting from the script if you use dynamic core frequency technologies (such as Intel Turbo Boost 3.0 or Ryzen PBO)
 powercfg /setacvalueindex %GUID% SUB_PROCESSOR PERFCHECK 5000
 
 
 ::DISABLE CORE PARKING SECTION
-::Remove this section if your processor requires core parking for scheduling
+::Remove this section from the script if your processor requires core parking for scheduling
 
 ::Processor performance core parking min cores - 100
 powercfg /setacvalueindex %GUID% SUB_PROCESSOR CPMINCORES 100
