@@ -12,6 +12,9 @@ powercfg /setacvalueindex %GUID% 2a737441-1930-4402-8d77-b2bebba308a3 48e6b7a6-5
 ::USB 3 Link Power Mangement - Off
 powercfg /setacvalueindex %GUID% 2a737441-1930-4402-8d77-b2bebba308a3 d4e98f31-5ffe-4ce1-be31-1b38b384c009 0
 
+::Processor energy performance preference policy - 0
+powercfg /setacvalueindex %GUID% SUB_PROCESSOR PERFEPP 0
+
 ::Allow Throttle States - Off
 powercfg /setacvalueindex %GUID% SUB_PROCESSOR THROTTLING 0
 
