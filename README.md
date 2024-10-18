@@ -22,7 +22,7 @@
 
 Use the [generate-power-plan.bat](scripts/generate-power-plan.bat) script to generate an optimized power plan. Read through the script and modify it according to your needs before running it.
 
-- See also: [CPU Idle States - PC-Tuning](https://github.com/valleyofdoom/PC-Tuning#1147-cpu-idle-states)
+- See also: [CPU Idle States - PC-Tuning](https://github.com/valleyofdoom/PC-Tuning#cpu-idle-states)
 
 # Enable MMCSS Scheduling of DWM and CSRSS Threads
 
