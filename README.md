@@ -84,7 +84,7 @@ Adjust the Interrupt Device Policy in GoInterruptPolicy or [Microsoft Interrupt 
 
 After adjusting the mentioned settings verify that ISRs/DPCs are executed on the desired cores with an xperf trace.
 
-- Avoid using the `Get-NetAdapterRss` Powershell command for this verification as it's output can be missleading
+- Avoid using the `Get-NetAdapterRss` Powershell command for this verification as it's output can be misleading
 
 ## Disable Delayed TCP Acknowledgments
 
