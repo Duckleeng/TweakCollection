@@ -54,7 +54,7 @@ Receive side scaling (RSS) is a network driver technology that enables distribut
 
 Keep in mind that MSI-X is required for RSS to function properly [as it allows the ISR to run on the same CPU that executes the DPC](https://learn.microsoft.com/en-us/windows-hardware/drivers/network/introduction-to-receive-side-scaling#how-rss-improves-system-performance).
 
-- If your NIC doesn't support MSI-X, it's recommended to disable RSS and instead configure a single-core affinity policy to avoid unnecessary inter-core communication.
+- If your NIC doesn't support MSI-X, it's recommended to disable RSS and instead configure a single-core affinity policy to avoid unnecessary inter-core communication
 
 Firstly, ensure that a driver with proper RSS support is installed - [Which NICs/drivers support RSS?](Research.md#which-nicsdrivers-support-receive-side-scaling-rss)
 
