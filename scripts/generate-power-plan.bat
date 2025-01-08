@@ -15,6 +15,9 @@ powercfg /setacvalueindex %GUID% 2a737441-1930-4402-8d77-b2bebba308a3 d4e98f31-5
 ::Processor energy performance preference policy - 0
 powercfg /setacvalueindex %GUID% SUB_PROCESSOR PERFEPP 0
 
+::Processor energy performance preference policy for Processor Power Efficiency Class 1 - 0
+powercfg /setacvalueindex %GUID% SUB_PROCESSOR PERFEPP1 0
+
 ::Allow Throttle States - Off
 powercfg /setacvalueindex %GUID% SUB_PROCESSOR THROTTLING 0
 
