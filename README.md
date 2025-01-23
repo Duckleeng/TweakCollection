@@ -84,7 +84,7 @@ Adjust the Interrupt Device Policy in GoInterruptPolicy or [Microsoft Interrupt 
 >
 > Experiment with disabling SMT/Hyper-Threading as this resolved the issue for some people.
 
-After adjusting the mentioned settings verify that ISRs/DPCs are executed on the desired cores with an xperf trace.
+After adjusting the mentioned settings verify that ISRs/DPCs are executed on the desired cores with an [xperf trace](https://github.com/valleyofdoom/PC-Tuning/blob/main/bin/xperf-dpcisr.bat).
 
 - Avoid using the `Get-NetAdapterRss` Powershell command for this verification as it's output can be misleading
 
