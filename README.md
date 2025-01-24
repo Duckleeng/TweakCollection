@@ -37,7 +37,7 @@ Use the [generate-power-plan.bat](scripts/generate-power-plan.bat) script to gen
 
 The main goal of disabling unnecessary services and drivers (from now on referred to as "services") is minimizing unnecessary context switches and CPU cycles wasted by these unused background processes while a real-time application is in use.
 
-The config provided in this section aims to provide a balance between wasted resources and compatibility. Even so, compatibility issues with many applications may arise while services are disabled, which is why services should be disabled only while a real-time application is in use, and enabled when doing other activities (such as installing or using other applications).
+The provided config aims to balance resource usage and compatibility. Even so, compatibility issues with many applications may arise while services are disabled, which is why services should be disabled only while a real-time application is in use, and enabled when doing other activities (such as installing or using other applications).
 
 - Windows Defender should be disabled before running service-list-builder as it may interfere with the generated scripts
 
