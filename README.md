@@ -28,7 +28,7 @@ Use the [generate-power-plan.bat](scripts/generate-power-plan.bat) script to gen
 # Disable Unnecessary Services and Drivers
 
 > [!CAUTION]
-> This section is targeted towards **ADVANCED USERS ONLY**. Improperly following this section may permanently damage your operating system, requiring a reinstall. I am not responsible for any issues that may occur while or due to following this section.
+> This section is targeted towards <ins>**ADVANCED USERS ONLY**</ins>. Improperly following this section may permanently damage your operating system, requiring a reinstall. I am not responsible for any issues that may occur while or due to following this section.
 >
 > Please familiarize yourself with [service-list-builder](https://github.com/valleyofdoom/service-list-builder) and thoroughly read its entire README before following this section.
 
@@ -137,7 +137,7 @@ ZTDNS
     reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform" /v "InactivityShutdownDelay" /t REG_DWORD /d "4294967295" /f
     ```
 
-- When rebuilding scripts, make sure to run the generated `Services-Enable.bat` script beforehand as the tool relies on the current state of the registry to generate the scripts
+- When rebuilding the scripts, make sure to run the generated `Services-Enable.bat` script beforehand as the tool relies on the current state of the registry to generate the scripts
 
 # Enable MMCSS Scheduling of DWM and CSRSS Threads
 
