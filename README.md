@@ -8,6 +8,7 @@
 ### [Guidance](#guidance)
 
 - [Power Plan](#power-plan)
+- [Disable Unnecessary Services and Drivers](#disable-unnecessary-services-and-drivers)
 - [Enable MMCSS Scheduling of DWM and CSRSS Threads](#enable-mmcss-scheduling-of-dwm-and-csrss-threads)
 - [Disable Timer Serialization](#disable-timer-serialization)
 - [Network](#network)
@@ -23,6 +24,120 @@
 Use the [generate-power-plan.bat](scripts/generate-power-plan.bat) script to generate an optimized power plan. Read through the script and modify it according to your needs before running it.
 
 - See also: [CPU Idle States - PC-Tuning](https://github.com/valleyofdoom/PC-Tuning#cpu-idle-states)
+
+# Disable Unnecessary Services and Drivers
+
+> [!CAUTION]
+> This section is targeted towards **ADVANCED USERS ONLY**. Improperly following this section may permanently damage your operating system, requiring a reinstall. I am not responsible for any issues that may occur while or due to following this section.
+>
+> Please familiarize yourself with [service-list-builder](https://github.com/valleyofdoom/service-list-builder) and thoroughly read its entire README before following this section.
+
+> [!WARNING]
+> Following this section may negatively impact security as several security features (such as Windows Defender and Firewall) will be disabled.
+
+The main goal of disabling unnecessary services and drivers (from now on referred to as "services") is minimizing unnecessary context switches and CPU cycles wasted by these unused background processes while a real-time application is in use.
+
+The config provided in this section aims to provide a balance between wasted resources and compatibility. Even so, compatibility issues with many applications may arise while services are disabled, which is why services should be disabled only while a real-time application is in use, and enabled when doing other activities (such as installing or using other applications).
+
+- Windows Defender should be disabled before running service-list-builder as it may interfere with the generated scripts
+
+- The optimal time to generate the scripts is after a clean reinstall of the operating system, before any 3rd-party applications have been installed, as this will allow for 3rd-party services to be installed onto the system later without being disabled by the script
+
+    - If the scripts are generated after 3rd-party applications have been installed, the user-mode services you wish to keep enabled must be added to the `[enabled_services]` section of the config
+
+Copy and paste the following config into the `lists.ini` file in the service-list-builder directory:
+
+```ini
+[enabled_services]
+Appinfo
+AppXSvc
+AudioEndpointBuilder
+Audiosrv
+BrokerInfrastructure
+camsvc
+CaptureService
+CoreMessagingRegistrar
+CryptSvc
+DcomLaunch
+DeviceInstall
+DevicesFlowUserSvc
+DispBrokerDesktopSvc
+Dnscache
+EFS
+gpsvc
+hidserv
+KeyIso
+LSM
+MMCSS
+msiserver
+netprofm
+nsi
+PlugPlay
+Power
+ProfSvc
+RpcEptMapper
+RpcSs
+seclogon
+sppsvc
+StateRepository
+SystemEventsBroker
+TextInputManagementService
+TrustedInstaller
+UserManager
+WFDSConMgrSvc
+Winmgmt
+AMD External Events Utility # Required for: VRR (FreeSync)
+Dhcp # Required for: Wi-Fi (set static IP when disabling)
+EventLog # Required for: Wi-Fi
+Netman # Required for: Wi-Fi
+NetSetupSvc # Required for: Wi-Fi
+NlaSvc # Required for: Wi-Fi
+Wcmsvc # Required for: Wi-Fi
+WinHttpAutoProxySvc # Required for: Wi-Fi
+WlanSvc # Required for: Wi-Fi
+UdkUserSvc # Required for: Windows Start Menu (not required when using alternatives e.g. Open-Shell)
+WpnService # Required for: Windows Notifications
+WpnUserService # Required for: Windows Notifications
+Schedule # Required for: Task Scheduler
+TimeBrokerSvc # Required for: Task Scheduler
+
+[individual_disabled_services]
+applockerfltr
+bfs
+EhStorClass
+luafv
+Ndu
+NetBIOS
+NetBT
+UCPD
+UnionFS
+WdNisDrv
+wtd
+ZTDNS
+# fvevol # Uncommenting breaks: BitLocker
+# msisadrv # Uncommenting breaks: Keyboard on mobile devices
+# volsnap # Uncommenting breaks: Win8 and lower
+# vwififlt # Uncommenting breaks: Wi-Fi
+
+[rename_binaries]
+\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\TextInputHost.exe # Uncommenting breaks: Windows Emoji Panel
+# \Windows\System32\RuntimeBroker.exe # Uncommenting breaks: Game Bar, Windows Start Menu (not required when using alternatives e.g. Open-Shell)
+# \Windows\System32\ctfmon.exe # Uncommenting breaks: Windows Start Menu (not required when using alternatives e.g. Open-Shell)
+# \Windows\SystemApps\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy\StartMenuExperienceHost.exe # Uncommenting breaks: Windows Start Menu (not required when using alternatives e.g. Open-Shell)
+# \Windows\System32\ShellHost.exe # Uncommenting breaks: Windows Shell (Internet/Audio button)
+```
+
+- Optionally comment/uncomment entries that include a note according to your needs, **carefully read the provided notes when doing so**
+
+- Optionally add unnecessary drivers from [unnecessary-drivers.txt](scripts/unnecessary-drivers.txt) to the `[individual_disabled_services]` section, **please note that this list is not officially supported and may lead to additional compatibility issues**
+
+- If you removed/commented out the `Schedule` and `TimeBrokerSvc` entries, run the following command to prevent the Software Protection service from attempting to schedule a restart every 30 seconds:
+
+    ```cmd
+    reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform" /v "InactivityShutdownDelay" /t REG_DWORD /d "4294967295" /f
+    ```
+
+- When rebuilding scripts, make sure to run the generated `Services-Enable.bat` script beforehand as the tool relies on the current state of the registry to generate the scripts
 
 # Enable MMCSS Scheduling of DWM and CSRSS Threads
 
