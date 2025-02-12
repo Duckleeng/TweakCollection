@@ -180,6 +180,7 @@ Navigate to the following registry key to configure RSS via the registry:
 - Add/change the following values (all values are of type String):
 
     - `*RSS` - "0" = Disable RSS, "1" = Enable RSS
+    - `*RSSProfile` - Set to 4, rest of the settings might get ignored otherwise
     - `*RssBaseProcNumber` - Set to your desired base processor
     - `*NumRssQueues` - Set to your desired amount of RSS queues
     - `*MaxRssProcessors` - Set to the same value as *NumRssQueues, required only on Intel NICs
