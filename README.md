@@ -64,7 +64,6 @@ DevicesFlowUserSvc
 DispBrokerDesktopSvc
 Dnscache
 EFS
-GameInputSvc
 gpsvc
 hidserv
 KeyIso
