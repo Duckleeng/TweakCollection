@@ -149,7 +149,7 @@ To do this, download [DWMEnableMMCSS](https://github.com/Duckleeng/DWMEnableMMCS
 C:\DWMEnableMMCSS.exe --no-console
 ```
 
-- Optionally, you may increase the `Priority` and/or `Scheduling Category` of the `Window Manager` and `Capture` tasks in the `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks` registry key to raise the priorities of DWM and CSRSS threads higher than threads of Audio and Pro Audio tasks
+- Optionally, you may change the `Priority` and/or `Scheduling Category` of the `Window Manager` and `Capture` tasks in the `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Multimedia\SystemProfile\Tasks` registry key to set the priorities of DWM and CSRSS threads higher than those of Audio and Pro Audio tasks
 
     - For more information on these values, see [Multimedia Class Scheduler Service](https://learn.microsoft.com/en-us/windows/win32/procthread/multimedia-class-scheduler-service)
 
