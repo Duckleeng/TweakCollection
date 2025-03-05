@@ -40,7 +40,7 @@ rem powercfg /setacvalueindex %GUID% SUB_PROCESSOR PERFCHECK 5000
 
 
 ::DISABLE CORE PARKING SECTION
-::Uncomment this section if your processor DOES NOT require core parking for scheduling
+::Uncomment this section if you DO NOT rely on core parking-dependent scheduling techniques
 
 ::Processor performance core parking min cores - 100
 rem powercfg /setacvalueindex %GUID% SUB_PROCESSOR CPMINCORES 100
