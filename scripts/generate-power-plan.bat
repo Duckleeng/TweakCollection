@@ -21,12 +21,6 @@ powercfg /setacvalueindex %GUID% SUB_PROCESSOR PERFEPP1 0
 ::Allow Throttle States - Off
 powercfg /setacvalueindex %GUID% SUB_PROCESSOR THROTTLING 0
 
-::Processor idle demote threshold - 100
-powercfg /setacvalueindex %GUID% SUB_PROCESSOR IDLEDEMOTE 100
-
-::Processor idle promote threshold - 100
-powercfg /setacvalueindex %GUID% SUB_PROCESSOR IDLEPROMOTE 100
-
 ::Turn off display after - 0
 powercfg /setacvalueindex %GUID% SUB_VIDEO VIDEOIDLE 0
 
