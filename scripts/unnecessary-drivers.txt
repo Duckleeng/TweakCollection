@@ -1,3 +1,4 @@
+amdgpio2
 CimFS
 CldFlt
 CompositeBus
