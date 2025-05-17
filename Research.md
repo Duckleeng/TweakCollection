@@ -8,6 +8,8 @@
 
 There are two main network driver interfaces: NDIS ("Windows 10 drivers") and NetAdapterCx ("Windows 11 drivers").
 
+According to Microsoft, [NetAdapterCx delivers improved performance and reduced latency compared to NDIS](https://techcommunity.microsoft.com/blog/networkingblog/introducing-the-netadapter-driver-model-for-the-next-generation-of-networks-and-/339722) as it uses a polling-based IO model instead of the interrupt-driven model used by NDIS. However, NetAdapterCx is not always the optimal pick due to the reasons explained below.
+
 ### Intel
 
 Intel's NetAdapterCx drivers ignore most registry settings related to RSS, making it impossible to control which cores DPCs/ISRs will be routed to, the driver decides this on it's own disregarding the registry settings:
