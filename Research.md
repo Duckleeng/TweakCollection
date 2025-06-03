@@ -16,7 +16,7 @@ Intel's NetAdapterCx drivers ignore most registry settings related to RSS, makin
 
 ![](img/NetAdapterCx-RSS.png)
 
-For this reason, it's recommended to use an NDIS driver on Intel NICs, as those drivers follow the RSS registry settings properly.
+For this reason, I recommend using an NDIS driver on Intel NICs, as those drivers follow the RSS registry settings properly.
 
 - To install an NDIS driver for an Intel NIC on a Windows 11 system, extract the installer .exe file via 7-Zip, then install the driver from the corresponding NDIS68 folder through Device Manager.
 
