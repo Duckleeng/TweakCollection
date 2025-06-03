@@ -176,6 +176,8 @@ Keep in mind that MSI-X is required for RSS to function properly [as it allows t
 
 - If your NIC doesn't support MSI-X, I recommend disabling RSS and instead configuring a single-core affinity policy to avoid unnecessary inter-core communication
 
+    - If this configuration does not yield the expected results, try using RSS configured with a single RSS queue
+
 Firstly, ensure that a driver with proper RSS support is installed - [Which NICs/drivers support RSS?](Research.md#which-nicsdrivers-support-receive-side-scaling-rss)
 
 Navigate to the following registry key to configure RSS via the registry:
