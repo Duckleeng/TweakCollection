@@ -156,9 +156,10 @@ ZTDNS
 
 ## Event Trace Sessions (ETS)
 
-Event tracing sessions specify which event providers to enable and record events from while they are running. Disabling them helps prevent unnecessary background activity by disabling these providers, which in turn disables Windows Event Logging and makes logging to the Event Log inaccessible to all applications.
+> [!WARNING]
+> If you wish to keep Windows Event Logging enabled for reliability purposes (as it can help with diagnosing issues with applications or the operating system), skip this step and ensure you didn't disable the `EventLog` service in the [Drivers and Services](#drivers-and-services) section.
 
-If you wish to keep Windows Event Logging enabled for reliability purposes (as it can help with diagnosing issues with applications or the operating system), skip this step and ensure you didn't disable the `EventLog` service in the [Drivers and Services](#drivers-and-services) section.
+Event tracing sessions specify which event providers to enable and record events from while they are running. Disabling them helps prevent unnecessary background activity by disabling these providers, which in turn disables Windows Event Logging and makes logging to the Event Log inaccessible to all applications.
 
 Same as with services, ETS should only be disabled while a real-time application is in use, and should be enabled while doing other activities.
 
