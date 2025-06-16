@@ -8,8 +8,10 @@
 ### [Guidance](#guidance)
 
 - [Power Plan](#power-plan)
-- [Disable Unnecessary Services and Drivers](#disable-unnecessary-services-and-drivers)
 - [Enable MMCSS Scheduling of DWM and CSRSS Threads](#enable-mmcss-scheduling-of-dwm-and-csrss-threads)
+- [Disable Unnecessary Background Activity](#disable-unnecessary-background-activity)
+    - [Drivers and Services](#drivers-and-services)
+    - [Event Trace Sessions (ETS)](#event-trace-sessions-ets)
 - [Network](#network)
     - [Receive Side Scaling (RSS) Configuration](#receive-side-scaling-rss-configuration)
     - [Disable Delayed TCP Acknowledgments](#disable-delayed-tcp-acknowledgments)
@@ -26,7 +28,19 @@ If possible, configure [Reserved CPU Sets](https://github.com/valleyofdoom/PC-Tu
 
 - See also: [CPU Idle States - PC-Tuning](https://github.com/valleyofdoom/PC-Tuning#cpu-idle-states)
 
-# Disable Unnecessary Services and Drivers
+# Enable MMCSS Scheduling of DWM and CSRSS Threads
+
+Enabling MMCSS scheduling of DWM and CSRSS threads will boost the priorities of the input (and other) threads, resulting in decreased input handling latency.
+
+To do this, download [DWMEnableMMCSS](https://github.com/Duckleeng/DWMEnableMMCSS), then add the following command to a shortcut in the `shell:startup` folder:
+
+```cmd
+C:\DWMEnableMMCSS.exe --no-console
+```
+
+# Disable Unnecessary Background Activity
+
+## Drivers and Services
 
 > [!CAUTION]
 > This section is targeted towards <ins>**ADVANCED USERS ONLY**</ins>. Improperly following this section may permanently damage your operating system, requiring a reinstall. I am not responsible for any issues that may occur while or due to following this section.
@@ -140,15 +154,29 @@ ZTDNS
 
 - When rebuilding the scripts, make sure to run the generated `Services-Enable.bat` script beforehand as the tool relies on the current state of the registry to generate the scripts
 
-# Enable MMCSS Scheduling of DWM and CSRSS Threads
+## Event Trace Sessions (ETS)
 
-Enabling MMCSS scheduling of DWM and CSRSS threads will boost the priorities of the input (and other) threads, resulting in decreased input handling latency.
+Event tracing sessions specify which event providers to enable and record events from while they are running. Disabling them helps prevent unnecessary background activity by disabling these providers, which in turn disables Windows Event Logging and makes logging to the Event Log inaccessible to all applications.
 
-To do this, download [DWMEnableMMCSS](https://github.com/Duckleeng/DWMEnableMMCSS), then add the following command to a shortcut in the `shell:startup` folder:
+If you wish to keep Windows Event Logging enabled for reliability purposes (as it can help with diagnosing issues with applications or the operating system), skip this step and ensure you didn't disable the `EventLog` service in the [Drivers and Services](#drivers-and-services) section.
 
-```cmd
-C:\DWMEnableMMCSS.exe --no-console
-```
+Same as with services, ETS should only be disabled while a real-time application is in use, and should be enabled while doing other activities.
+
+Same as with services, the following registry files need to be applied using [NSudo](https://github.com/M2TeamArchived/NSudo/releases) with the `Enable All Privileges` enabled, so I recommend keeping these registry files in the same place as the generated services scripts. The matching registry file should be applied just before running one of the services scripts.
+
+Open CMD as administrator and enter the commands below to build the registry files in the `C:\` directory:
+
+- ``ets-enable.reg``
+
+    ```bat
+    reg export "HKLM\SYSTEM\CurrentControlSet\Control\WMI\Autologger" "C:\ets-enable.reg"
+    ```
+
+- ``ets-disable.reg``
+
+    ```bat
+    >> "C:\ets-disable.reg" echo Windows Registry Editor Version 5.00 && >> "C:\ets-disable.reg" echo. && >> "C:\ets-disable.reg" echo [-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger]
+    ```
 
 # Network
 
