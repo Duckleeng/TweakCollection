@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-- [Which NICs/drivers support Receive Side Scaling (RSS)?](#which-nicsdrivers-support-receive-side-scaling-rss)
+- [Which NICs/Drivers Support Receive Side Scaling (RSS)?](#which-nicsdrivers-support-receive-side-scaling-rss)
 
 ## Which NICs/Drivers Support Receive Side Scaling (RSS)?
 
