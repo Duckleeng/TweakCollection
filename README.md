@@ -135,6 +135,7 @@ ZTDNS
 # vwififlt # Uncommenting breaks: Wi-Fi
 
 [rename_binaries]
+\Windows\System32\upfc.exe # Uncommenting breaks: Windows Update Auto Repair
 \Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy\TextInputHost.exe # Uncommenting breaks: Windows Emoji Panel
 # \Windows\System32\RuntimeBroker.exe # Uncommenting breaks: Game Bar, Windows Start Menu (not required when using alternatives e.g. Open-Shell)
 # \Windows\System32\ctfmon.exe # Uncommenting breaks: Windows Start Menu (not required when using alternatives e.g. Open-Shell)
