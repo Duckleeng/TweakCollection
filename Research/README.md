@@ -19,7 +19,7 @@ Intel's NetAdapterCx drivers ignore most registry settings related to RSS, makin
 
 For this reason, I recommend using an NDIS driver on Intel NICs, as those drivers follow the RSS registry settings properly.
 
-- To install an NDIS driver for an Intel NIC on a Windows 11 system, extract the installer .exe file via 7-Zip (this is no longer neccesary, as these files come pre-extracted with latest driver versions), then install the driver from the corresponding NDIS68 folder through Device Manager.
+- To install an NDIS driver for an Intel NIC on a Windows 11 system, extract the installer .exe file via 7-Zip (this is no longer neccesary, as these files come pre-extracted with latest driver versions), then install the driver from the corresponding NDIS68 folder through Device Manager
 
 Verify that you installed the correct driver by running an xperf trace while an internet speedtest is running:
 
@@ -29,9 +29,7 @@ Verify that you installed the correct driver by running an xperf trace while an 
 
 <br>
 
-In the [patch notes](https://downloadmirror.intel.com/785798/readme_28.2.txt) of the 28.2 Intel Network Adapter Driver, RSS is noted as a removed feature
-
-- Despite this, RSS still continues to function when configured following the [instructions in Guidance](/README.md#receive-side-scaling-rss-configuration)
+In the [patch notes](https://downloadmirror.intel.com/785798/readme_28.2.txt) of the 28.2 Intel Network Adapter Driver, RSS is noted as a removed feature. Despite this, RSS still continues to function when configured following the [instructions in Guidance](/README.md#receive-side-scaling-rss-configuration).
 
 ### Realtek
 
