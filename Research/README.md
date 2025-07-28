@@ -44,7 +44,7 @@ If you're planning to use RSS, consider avoiding motherboards with Realtek NICs 
 
 ## Windows 11 24H2 AutoBoost Behavior
 
-AutoBoost is a Windows thread scheduler framework targeted at the priority-inteversion problem, as described in Windows Internals:
+AutoBoost is a Windows thread scheduler framework targeted at the priority-inversion problem, as described in Windows Internals:
 
 > Imagine the following situation: A priority 7 thread is running, preventing a priority 4 thread from ever receiving CPU time. However, a priority 11 thread is waiting for some resource that the priority 4 thread has locked. But because the priority 7 thread in the middle is eating up all the CPU time, the priority 4 thread will never run long enough to finish whatever it’s doing and release the resource blocking the priority 11 thread. This scenario is known as *priority inversion*.
 
