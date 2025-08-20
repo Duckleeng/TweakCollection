@@ -162,6 +162,8 @@ ZTDNS
 
 Event tracing sessions specify which event providers to enable and record events from while they are running. Disabling them helps prevent unnecessary background activity by disabling these providers, which in turn disables Windows Event Logging and makes logging to the Event Log inaccessible to all applications.
 
+Disabling event tracing sessions will break the Windows Event Log service and all services that depend on it. When disabling event tracing sessions, ensure you've [disabled the Windows Search service](https://github.com/valleyofdoom/PC-Tuning#search-indexing), as Windows Explorer will break when this service is enabled but not functioning properly.
+
 Same as with services, ETS should only be disabled while a real-time application is in use, and should be enabled while doing other activities.
 
 Same as with services, the following registry files need to be applied using [NSudo](https://github.com/M2TeamArchived/NSudo/releases) with the `Enable All Privileges` enabled, so I recommend keeping these registry files in the same place as the generated services scripts. The matching registry file should be applied just before running one of the services scripts.
