@@ -70,6 +70,8 @@ Since the threads are getting boosted to the priority of DWM threads, the cause 
 
 But if the priority goes back to normal when there is no mouse movement, why was the priority *stuck* at 21 when I originally checked it in Process Explorer? It's worth noting that the threads get *stuck* in the real-time range after seemingly random amounts of time: sometimes in seconds, sometimes in hours; depending on the observed thread and timing variability, indicating a possible race condition. After the thread priority gets *stuck*, I have not found a way to reset it back to normal without fully ending the process/thread.
 
+From my testing, a consistent way of replicating the priority getting *stuck* in the real-time range seems to be starting `CPUSTRES64.exe` and resizing its window. After the window has been resized, the main thread can be observed staying in the real-time priority range even when no user input is occuring.
+
 At this time, I also came across an instance of the NVIDIA driver boosting a thread into the real-time range (`CPUSTRES64.exe`):
 
 ```
