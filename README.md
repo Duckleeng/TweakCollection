@@ -24,7 +24,7 @@
 
 Use the [generate-power-plan.bat](scripts/generate-power-plan.bat) script to generate an optimized power plan. Read through the script and modify it according to your needs before running it.
 
-If possible, configure [Reserved CPU Sets](https://github.com/valleyofdoom/PC-Tuning#reserved-cpu-sets-windows-10) instead of relying on core parking-dependent scheduling techniques present in many recent CPU architectures, as core parking does not function when CPU idle states are disabled.
+If possible, configure [Reserved CPU Sets](https://github.com/valleyofdoom/PC-Tuning#reserved-cpu-sets) instead of relying on core parking-dependent scheduling techniques present in many recent CPU architectures, as core parking does not function when CPU idle states are disabled.
 
 - See also: [CPU Idle States - PC-Tuning](https://github.com/valleyofdoom/PC-Tuning#cpu-idle-states)
 
