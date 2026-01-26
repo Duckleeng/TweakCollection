@@ -153,4 +153,5 @@ I confirmed that threads do not get *stuck* in the real-time priority range when
 
 While it's not clear exactly why this happens or who's at fault, it's clear that the NVIDIA driver does not play nicely with the changes made to the AutoBoost framework. **Such behavior of user-mode threads randomly getting permanently boosted into the real-time range could result in a performance regression and even pose as a security threat, so it should be addressed by NVIDIA or Microsoft as soon as possible.**
 
-Due to the negative impact on performance and responsiveness of games getting permanently boosted into the real-time priority range, I would not recommend using Windows 11 24H2 or later versions on devices using NVIDIA GPUs for low latency gaming for the time being.
+~~Due to the negative impact on performance and responsiveness of games getting permanently boosted into the real-time priority range, I would not recommend using Windows 11 24H2 or later versions on devices using NVIDIA GPUs for low latency gaming for the time being.~~<br>
+This behavior has been fixed in the NVIDIA graphics driver version 591.44 and user-mode threads no longer get stuck in real-time priority. Make sure to update your drivers to a newer version to avoid issues.
