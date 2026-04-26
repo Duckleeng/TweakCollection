@@ -153,5 +153,9 @@ I confirmed that threads do not get *stuck* in the real-time priority range when
 
 While it's not clear exactly why this happens or who's at fault, it's clear that the NVIDIA driver does not play nicely with the changes made to the AutoBoost framework. **Such behavior of user-mode threads randomly getting permanently boosted into the real-time range could result in a performance regression and even pose as a security threat, so it should be addressed by NVIDIA or Microsoft as soon as possible.**
 
-~~Due to the negative impact on performance and responsiveness of games getting permanently boosted into the real-time priority range, I would not recommend using Windows 11 24H2 or later versions on devices using NVIDIA GPUs for low latency gaming for the time being.~~<br>
-This behavior has been fixed in the NVIDIA graphics driver version 591.44 and user-mode threads no longer get stuck in real-time priority. Make sure to update your drivers to a newer version to avoid issues.
+Due to the negative impact on performance and responsiveness of games getting permanently boosted into the real-time priority range, I would not recommend using Windows 11 24H2 or later versions on devices using NVIDIA GPUs for low latency gaming for the time being.
+
+> [!IMPORTANT]
+> Update: This behavior has been partially fixed in the NVIDIA graphics driver version 591.44, user-mode threads of windows in windowed mode no longer get stuck in real-time priority.
+>
+> However, applications and games that run in fullscreen mode still experience the same effects, specially apps using the `Hardware: Legacy Flip` presentation mode. While applications using `Hardware: Independent Flip` don't seem to experience the issue to the same extent, the issue can still be observed when the application resolution is changed or when the app is switched from windowed mode to fullscreen mode (see: [Issue#6](https://github.com/Duckleeng/TweakCollection/issues/6))
