@@ -182,6 +182,16 @@ Open CMD as administrator and enter the commands below to build the registry fil
     >> "C:\ets-disable.reg" echo Windows Registry Editor Version 5.00 && >> "C:\ets-disable.reg" echo. && >> "C:\ets-disable.reg" echo [-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger]
     ```
 
+### SleepStudy
+
+The `SleepStudyTraceSession` is started independently by the `Power` service and therefore won't be disabled by the steps provided above.
+
+Run the following command to disable SleepStudy:
+
+```cmd
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Power" /v "SleepStudyDisabled" /t REG_DWORD /d "1" & reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Power" /v "SleepStudyTraceDirectory" /t REG_SZ
+```
+
 # Network
 
 ## Receive Side Scaling (RSS) Configuration
