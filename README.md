@@ -172,13 +172,13 @@ Open CMD as administrator and enter the commands below to build the registry fil
 
 - ``ets-enable.reg``
 
-    ```bat
+    ```cmd
     reg export "HKLM\SYSTEM\CurrentControlSet\Control\WMI\Autologger" "C:\ets-enable.reg"
     ```
 
 - ``ets-disable.reg``
 
-    ```bat
+    ```cmd
     >> "C:\ets-disable.reg" echo Windows Registry Editor Version 5.00 && >> "C:\ets-disable.reg" echo. && >> "C:\ets-disable.reg" echo [-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger]
     ```
 
