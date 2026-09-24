@@ -68,6 +68,7 @@ Appinfo
 AppXSvc
 AudioEndpointBuilder
 Audiosrv
+BFE
 BrokerInfrastructure
 camsvc
 CaptureService
